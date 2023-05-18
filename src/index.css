@@ -20,3 +20,35 @@
         src: url('./assets/fonts/NetflixSans-Bold.otf');
     }
 }
+
+.clear:before{
+    content: "\2715";
+}
+
+html {
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+  }
+
+.slick-list { 
+    overflow: visible !important;
+}
+
+.slick-dots li {
+    height: 0 !important;
+    width: 1rem !important;
+    margin: 0 -1px !important;
+}
+
+.slick-dots .slick-active div {
+    background-color: rgb(255 255 255 / 0.6);
+}
+
+.slick-dots {
+    height: 10px !important;
+    top: -2rem;
+}

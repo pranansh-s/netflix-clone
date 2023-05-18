@@ -5,10 +5,10 @@ const youtube = require('../assets/Simple White/Youtube.png');
 
 const Footer = () => {
   return (
-    <div className="h-1/3 bg-primary px-56 text-link font-Netflix text-xs">
+    <div className="bg-primary px-[22rem] text-link font-Netflix text-xs pb-5">
         <ul className="flex">
             {   [facebook, instagram, twitter, youtube].map((src, index) => (
-            <img src={src} className='w-10 m-1' key={index} alt="" />   ))}
+            <img src={src} className='w-10 m-1 cursor-pointer' key={index} alt="" />   ))}
         </ul>
         <div className="flex m-3 space-x-32">
             <ul className="flex flex-col space-y-4">
