@@ -73,7 +73,7 @@ const Carousel = (props: {title: string, get: string, type: string}) => {
   };
 
   return (
-    <div className='text-white h-full group/carousel absolute z-30'>
+    <div className='text-white group/carousel absolute z-30'>
       {cards && 
       <>
         <div className='flex items-center group/heading w-max'>

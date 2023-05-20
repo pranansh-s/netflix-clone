@@ -10,7 +10,7 @@ function App() {
       <Header/>
       <div className="h-40 w-screen absolute -mt-40 z-10 bg-gradient-to-b from-transparent to-primary"/>
       <div className="top-[91%] absolute z-30"><Carousel title="Action Movies For You" get="ACTION" type="movies"/></div>
-      <ul className="flex flex-col bg-primary space-y-64 pt-40 h-full">
+      <ul className="flex flex-col bg-primary space-y-72 pt-40 h-full">
         <Carousel title="Crime Based Movies" get="CRIME" type="movies"/>
         <Carousel title="Light Hearted Comedies" get="COMEDY" type="tv"/>
         <Carousel title="Real-Life Incidents" get="DOCUMENTARY" type="tv"/>
