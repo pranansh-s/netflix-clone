@@ -9,15 +9,16 @@ import Slider, { LazyLoadTypes } from 'react-slick';
 
 import Card from './Card';
 
+const chevronThick = require('../assets/ichevthick.png');
 const chevronRight = require('../assets/ichevright.png');
 const chevronLeft = require('../assets/ichevleft.png');
 
 const NextArrow = (props: any) => {
   const { style, onClick } = props;
   return (
-    <div className='absolute z-10 top-0 right-0 h-full w-[3.3rem] flex justify-center items-center cursor-pointer bg-black bg-opacity-40 group-hover:bg-opacity-60'>
+    <div className='absolute z-10 top-0 right-0 h-full w-[3.3rem] flex justify-center items-center bg-black opacity-0 group-hover:opacity-100 group-hover:bg-opacity-60 hover:bg-opacity-80'>
       <img
-        className="h-10 group-hover:opacity-100 opacity-0"
+        className="h-8 hover:scale-125 transition-all duration-200"
         style={{ ...style}}
         onClick={onClick}
         src={chevronRight}
@@ -29,9 +30,9 @@ const NextArrow = (props: any) => {
 const PrevArrow = (props: any) => {
   const { style, onClick } = props;
   return (
-    <div className='absolute z-10 top-0 left-0 h-full w-[3.3rem] flex justify-center items-center cursor-pointer bg-black bg-opacity-40 group-hover:bg-opacity-60'>
+    <div className='absolute z-10 top-0 left-0 h-full w-[3.3rem] flex justify-center items-center bg-black opacity-0 group-hover:opacity-100 group-hover:bg-opacity-60 hover:bg-opacity-80'>
       <img
-        className="h-10 group-hover:opacity-100 opacity-0"
+        className="h-8 hover:scale-125 transition-all duration-200"
         style={{ ...style}}
         onClick={onClick}
         src={chevronLeft}
@@ -72,11 +73,17 @@ const Carousel = (props: {title: string, get: string, type: string}) => {
   };
 
   return (
-    <div className='text-white h-max'>
+    <div className='text-white h-full group/carousel absolute z-30'>
       {cards && 
       <>
-        <h3 className='font-Netflix text-2xl my-3 px-14'>{props.title}</h3>
-        <Slider {...settings} className="group w-screen h-max px-14 hover:overflow-y-visible overflow-y-hidden overflow-x-clip">
+        <div className='flex items-center group/heading w-max'>
+          <h3 className='font-Netflix text-2xl cursor-pointer my-3 pl-14'>{props.title}</h3>
+          <div className='flex items-center cursor-pointer space-x-1 font-NetflixBold text-[#54b9c5] opacity-0 text-sm group-hover/carousel:opacity-100'>
+            <h5 className='w-0 group-hover/heading:w-full group-hover/heading:pl-4 group-hover/heading:opacity-90 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-700'>Explore All</h5>
+            <img src={chevronThick} className='h-4 translate-y-1/5 group-hover/heading:h-3' alt="" />
+          </div>
+        </div>
+        <Slider {...settings} className="w-screen cursor-pointer group h-max px-14 group hover:overflow-y-visible overflow-y-hidden overflow-x-clip">
           {cards.map((item: any, index: number) => <Card key={index} item={item} />)}
         </Slider>
       </>}
